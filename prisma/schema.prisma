@@ -22,18 +22,20 @@ enum Role {
 }
 
 model User {
-  id              String       @id @default(uuid())
-  name            String
-  email           String
-  password        String
-  cnic_number     String
-  phone           String
-  role            Role         @default(USER)
-  profile_picture String?
-  is_deleted      Boolean      @default(false)
-  is_verified     Boolean      @default(false)
-  is_blocked      Boolean      @default(false)
-  user_address    UserAddress?
+  id                   String       @id @default(uuid())
+  name                 String?
+  email                String?
+  password             String
+  cnic_number          String
+  phone                String
+  role                 Role         @default(USER)
+  profile_picture      String?
+  is_deleted           Boolean      @default(false)
+  is_verified          Boolean      @default(false)
+  is_blocked           Boolean      @default(false)
+  block_reason         String?
+  is_profile_completed Boolean      @default(false)
+  user_address         UserAddress?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
